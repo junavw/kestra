@@ -37,7 +37,7 @@ import static io.kestra.core.utils.WindowsUtils.windowsToUnixPath;
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public abstract class TaskRunner<T extends TaskRunnerDetailResult> implements Plugin, PluginVersioning, WorkerJobLifecycle {
     @NotBlank
-    @Pattern(regexp="\\p{javaJavaIdentifierStart}\\p{javaJavaIdentifierPart}*(\\.\\p{javaJavaIdentifierStart}\\p{javaJavaIdentifierPart}*)*")
+    @Pattern(regexp="^[A-Za-z_][A-Za-z0-9_]*(\\.[A-Za-z_][A-Za-z0-9_]*)*$")
     protected String type;
 
     @PluginProperty(hidden = true, group = PluginProperty.CORE_GROUP)
